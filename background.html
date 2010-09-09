@@ -1,0 +1,62 @@
+<script>
+var currentRequest = null;
+
+chrome.experimental.omnibox.onInputChanged.addListener(
+  function(text, suggest) {
+    if (text == '') {
+      return;
+    }
+
+    if (currentRequest != null) {
+      currentRequest.onreadystatechange = null;
+      currentRequest.abort();
+      currentRequest = null;
+    }
+    
+    currentRequest = search(text, function(response) {
+      console.log(response);
+      var results = [];
+      var entries = JSON.parse(response);
+      console.log(entries);
+
+      for (var key in entries){
+        console.log(key);
+        console.log(entries[key]);
+
+        results.push({
+          content: entries[key],
+          description: entries[key],
+        });
+      }
+    
+      suggest(results);
+    });
+  }
+);
+
+function search(query, callback) {
+  var url = "http://api.lullabot.com/api/autocomplete/6/" + query;
+  var req = new XMLHttpRequest();
+  req.open("GET", url, true);
+  req.onreadystatechange = function() {
+    if (req.readyState == 4) {
+      callback(req.responseText);
+    }
+  }
+  req.send(null);
+  return req;
+}
+
+chrome.experimental.omnibox.onInputEntered.addListener(
+  function(text) {
+    navigate("http://api.lullabot.com/api/search/6/" + text);
+  }
+);
+
+function navigate(url) {
+  chrome.tabs.getSelected(null, function(tab) {
+    chrome.tabs.update(tab.id, {url: url});
+  });
+}
+
+</script>

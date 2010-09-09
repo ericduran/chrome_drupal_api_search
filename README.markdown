@@ -1,0 +1,8 @@
+{
+  "name": "D6 Api",
+  "version": "0.1",
+  "description": "Allows you to search Drupal's api using Chrome omnibox.",
+  "permissions": [ "experimental", "tabs", "http://api.lullabot.com/"],
+  "background_page": "background.html",
+  "omnibox_keyword": "d6"
+}
