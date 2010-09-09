@@ -1,8 +1,4 @@
-{
-  "name": "D6 Api",
-  "version": "0.1",
-  "description": "Allows you to search Drupal's api using Chrome omnibox.",
-  "permissions": [ "experimental", "tabs", "http://api.lullabot.com/"],
-  "background_page": "background.html",
-  "omnibox_keyword": "d6"
-}
+## Drupal API Search from Chrome Omnibox ##
+
+------
+This is a chrome extension that allows you to search Drupal API using chrome Omnibox.
