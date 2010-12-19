@@ -1,8 +1,11 @@
 {
-  "name": "D6 Api",
+  "name": "D7 Api",
   "version": "0.1",
   "description": "Allows you to search Drupal's api using Chrome omnibox.",
   "permissions": ["tabs", "http://api.lullabot.com/"],
   "background_page": "background.html",
-  "omnibox": { "keyword" : "d7" }
+  "omnibox": { "keyword" : "d7" },
+  "icons": {
+    "16": "lullabot.ico"
+  }
 }
