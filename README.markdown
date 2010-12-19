@@ -9,6 +9,6 @@ Before it would do an request as you type, but now it caches all the functions w
 Sadly when Lullabot updates their api site this will break, but for now I'll be working on supporting all three sites (api.drupal.org, api.drupalcontrib.org and api.lullabot.org).
 
 ####Other Info####
-- Download : [d6 https://github.com/downloads/ericduran/chrome_drupal_api_search/drupal_omnibox_api_search.crx]
-- [D7 version https://github.com/ericduran/chrome_drupal_api_search/tree/d7]
+- Download : [d6 extension](https://github.com/downloads/ericduran/chrome_drupal_api_search/drupal_omnibox_api_search.crx)
+- [D7 version](https://github.com/ericduran/chrome_drupal_api_search/tree/d7)
 
