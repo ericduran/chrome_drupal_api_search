@@ -4,5 +4,5 @@
   "description": "Allows you to search Drupal's api using Chrome omnibox.",
   "permissions": ["tabs", "http://api.lullabot.com/"],
   "background_page": "background.html",
-  "omnibox": { "keyword" : "d6" }
+  "omnibox": { "keyword" : "d7" }
 }
