@@ -1,7 +1,7 @@
 <script>
 var currentRequest = null;
 
-chrome.experimental.omnibox.onInputChanged.addListener(
+chrome.omnibox.onInputChanged.addListener(
   function(text, suggest) {
     if (text == '') {
       return;
@@ -14,15 +14,10 @@ chrome.experimental.omnibox.onInputChanged.addListener(
     }
     
     currentRequest = search(text, function(response) {
-      console.log(response);
       var results = [];
       var entries = JSON.parse(response);
-      console.log(entries);
 
       for (var key in entries){
-        console.log(key);
-        console.log(entries[key]);
-
         results.push({
           content: entries[key],
           description: entries[key],
@@ -47,7 +42,7 @@ function search(query, callback) {
   return req;
 }
 
-chrome.experimental.omnibox.onInputEntered.addListener(
+chrome.omnibox.onInputEntered.addListener(
   function(text) {
     navigate("http://api.lullabot.com/api/search/6/" + text);
   }
