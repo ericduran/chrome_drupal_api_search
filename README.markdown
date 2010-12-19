@@ -1,4 +1,4 @@
-## Drupal 7 API Search from Chrome Omnibox ##
+## Drupal 6/7 API Search from Chrome Omnibox ##
 - - -
 ###Directions###
 This extension required a Beta version of Chrome.
